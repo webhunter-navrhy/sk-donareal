@@ -1,0 +1,144 @@
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/schibstedgrotesk-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/schibstedgrotesk-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/schibstedgrotesk-700-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/schibstedgrotesk-700-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/ibmplexmono-400-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/ibmplexmono-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}/* Neutrální základ. ŽÁDNÝ design: barvy, fonty a layout vymysli pro konkrétního klienta. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
+body { margin: 0; overflow-x: clip; }
+img, picture, video, svg { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+ul[role="list"], ol[role="list"] { list-style: none; margin: 0; padding: 0; }
+
+:root {
+  /* barvy: přepiš podle brandu klienta (brief.json -> barvy.doporucene) */
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --muted: #5c5c5c;
+  --accent: #1a1a1a;
+  --accent-text: #ffffff;
+  --line: #d9d9d9;
+
+  /* písmo: self-host do static/fonts + @font-face s font-display: swap; vždy otestuj háčky ěščřžýáíéůú */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: var(--font-body);
+
+  /* typografická škála (320 až 1440 px) */
+  --step--1: clamp(0.83rem, 0.80rem + 0.14vw, 0.92rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.45rem);
+  --step-2: clamp(1.44rem, 1.3rem + 0.7vw, 1.9rem);
+  --step-3: clamp(1.73rem, 1.5rem + 1.2vw, 2.6rem);
+  --step-4: clamp(2.07rem, 1.7rem + 1.9vw, 3.5rem);
+  --step-5: clamp(2.5rem, 1.9rem + 3vw, 5rem);
+
+  --space-1: 0.5rem;  --space-2: 1rem;  --space-3: 1.5rem;
+  --space-4: 2.5rem;  --space-5: 4rem;  --space-6: clamp(4rem, 3rem + 5vw, 8rem);
+  --wrap: 72rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+}
+
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: var(--step-0); line-height: 1.6; }
+h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 600; }
+h1 { font-size: var(--step-5); } h2 { font-size: var(--step-3); } h3 { font-size: var(--step-1); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--wrap)); margin-inline: auto; }
+.sekce { padding-block: var(--space-6); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip { position: absolute; left: var(--space-2); top: -4rem; background: var(--bg); padding: var(--space-1) var(--space-2); z-index: 100; }
+.skip:focus { top: var(--space-2); }
+
+/* dotykové cíle: min. 44 px (QA hlásí < 40 px) */
+.tap, button, .tlacitko, input:not([type="checkbox"]):not([type="radio"]), select, textarea { min-height: 44px; }
+.tlacitko, button[type="submit"] { display: inline-flex; align-items: center; justify-content: center; padding: 0.6em 1.4em; background: var(--accent); color: var(--accent-text); border: 0; text-decoration: none; }
+.hlavicka nav a, .paticka a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 0.25rem; }
+
+/* formulář */
+.formular { display: grid; gap: var(--space-2); max-width: 36rem; }
+.formular label { display: grid; gap: 0.25rem; font-size: var(--step--1); }
+.formular input, .formular textarea, .formular select { padding: 0.6em 0.8em; border: 1px solid var(--line); background: transparent; width: 100%; }
+.formular .past { position: absolute; left: -9999px; }
+.formular-stav { font-size: var(--step--1); min-height: 1.5em; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+/* Donareal: revízny protokol, oranžová a grafit z pôvodného webu */
+:root { --bg:#f6f3ec; --text:#2b2b2b; --muted:#5d584d; --accent:#D57501; --accent-text:#1d1d1d; --line:#d6cfbf; --graf:#343434; --tan:#ada38b;
+  --font-body:'Schibsted Grotesk',system-ui,sans-serif; --font-head:'Schibsted Grotesk',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,monospace; }
+body { font-weight:400; }
+h1,h2,h3 { font-weight:700; letter-spacing:-0.015em; }
+h1 { font-size:clamp(2.3rem,1.5rem + 3.6vw,4.4rem); line-height:1.04; }
+h2 { font-size:clamp(1.8rem,1.4rem + 1.6vw,2.8rem); }
+.hlavicka { position:sticky; top:0; z-index:50; background:var(--graf); color:#fff; border-bottom:4px solid var(--accent); }
+.hlavicka .wrap { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:64px; flex-wrap:wrap; }
+.logo { font-weight:700; letter-spacing:.14em; text-decoration:none; font-size:1.05rem; display:inline-flex; align-items:center; min-height:44px; }
+.logo::after { content:'.'; color:var(--accent); }
+.hlavicka nav { display:flex; gap:.5rem; flex-wrap:wrap; }
+.hlavicka nav a { text-decoration:none; font-size:var(--step--1); color:#e9e4d6; padding-inline:.6rem; }
+.hlavicka nav a:hover { color:var(--accent); }
+.hero { padding-block:clamp(3rem,6vw,6rem); border-bottom:1px solid var(--line); }
+.hero-grid { display:grid; grid-template-columns:1.25fr 1fr; gap:clamp(2rem,5vw,5rem); align-items:center; }
+.stitok { font-family:var(--mono); font-size:var(--step--1); text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin-bottom:1.2rem; }
+.uvod { font-size:var(--step-1); color:var(--muted); margin-top:1.4rem; max-width:34rem; }
+.akcie { display:flex; align-items:center; gap:1.5rem; margin-top:2rem; flex-wrap:wrap; }
+.tlacidlo, button[type=submit] { display:inline-flex; align-items:center; background:var(--accent); color:var(--accent-text); font-weight:700; padding:.8em 1.6em; text-decoration:none; border:0; border-radius:2px; }
+.tlacidlo:hover, button[type=submit]:hover { background:#e88a1a; }
+.odkaz { font-family:var(--mono); text-decoration:none; border-bottom:2px solid var(--accent); padding-block:.4rem; }
+.protokol { background:#fff; border:1px solid var(--line); border-top:10px solid var(--accent); box-shadow:0 1px 0 var(--line); }
+.protokol-hlava { font-family:var(--mono); font-size:var(--step--1); text-transform:uppercase; letter-spacing:.06em; padding:1rem 1.4rem; background:var(--graf); color:#fff; }
+.protokol li { position:relative; padding:.95rem 1.4rem .95rem 3.2rem; border-bottom:1px dashed var(--line); }
+.protokol li:last-child { border-bottom:0; }
+.protokol li::before { content:''; position:absolute; left:1.4rem; top:1.15rem; width:1rem; height:1rem; border:2px solid var(--graf); }
+.protokol li::after { content:''; position:absolute; left:1.65rem; top:1.2rem; width:.35rem; height:.7rem; border:solid var(--accent); border-width:0 3px 3px 0; transform:rotate(40deg); }
+.lead { color:var(--muted); max-width:44rem; margin-top:1rem; }
+.riadky { margin-top:var(--space-4); border-top:2px solid var(--graf); }
+.riadky li { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr); gap:1.5rem 3rem; padding:1.5rem 0; border-bottom:1px solid var(--line); }
+.riadky h3 { font-size:var(--step-1); }
+.riadky p { color:var(--muted); }
+.tmava { background:var(--graf); color:#f1ede2; }
+.tmava .lead { color:var(--tan); }
+.dva { display:grid; grid-template-columns:1fr 1.4fr; gap:clamp(2rem,5vw,5rem); align-items:start; }
+.stlpce { columns:2; column-gap:2rem; }
+.stlpce li { break-inside:avoid; padding:.7rem 0 .7rem 1.4rem; border-bottom:1px solid #55524a; position:relative; }
+.stlpce li::before { content:''; position:absolute; left:0; top:1.25rem; width:.6rem; height:.6rem; background:var(--accent); }
+.porovnanie { display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-top:var(--space-4); }
+.porovnanie > div { background:#fff; border:1px solid var(--line); padding:1.6rem; }
+.porovnanie > div:first-child { border-top:6px solid var(--accent); }
+.porovnanie > div:last-child { border-top:6px solid var(--tan); }
+.porovnanie li { padding:.5rem 0; border-bottom:1px dashed var(--line); }
+.porovnanie h3 { margin-bottom:.8rem; }
+.kontakt { background:#ece6d7; }
+address { font-style:normal; margin-top:1.2rem; line-height:1.7; }
+address a { text-decoration-color:var(--accent); text-underline-offset:3px; }
+.poznamka { margin-top:1.5rem; color:var(--muted); max-width:24rem; }
+.kontakt .formular input, .kontakt .formular textarea, .kontakt .formular select { background:#fff; border-color:var(--tan); }
+.paticka { background:var(--graf); color:#cfc9b8; padding-block:2rem; font-size:var(--step--1); }
+.paticka .wrap { display:flex; gap:1.5rem 2.5rem; flex-wrap:wrap; }
+@media (max-width:52rem){ .hero-grid,.dva,.porovnanie,.riadky li{grid-template-columns:1fr} .stlpce{columns:1} .hlavicka nav{gap:0} }
+
+/* v2: protokol cez celú stránku, mobilná hlavička */
+section[id] { scroll-margin-top:84px; }
+.hero { min-height:min(85vh,46rem); display:flex; align-items:center; }
+.hero > .wrap { width:min(100% - 2 * var(--gutter), var(--wrap)); }
+.riadky li { position:relative; grid-template-columns:2.4rem minmax(0,1fr) minmax(0,1.6fr); align-items:start; }
+.znak { width:1.2rem; height:1.2rem; border:2px solid var(--graf); position:relative; margin-top:.3rem; }
+.znak::after { content:''; position:absolute; left:.28rem; top:-.15rem; width:.4rem; height:.8rem; border:solid var(--accent); border-width:0 3px 3px 0; transform:rotate(40deg); }
+.pecat { grid-column:2 / -1; font-family:var(--mono); font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--tan); border-top:1px dashed var(--line); padding-top:.6rem; }
+.zavolat { display:none; }
+@media (max-width:52rem){
+  .hlavicka .wrap { flex-wrap:nowrap; min-height:60px; }
+  .hlavicka nav { display:none; }
+  .zavolat { display:inline-flex; align-items:center; min-height:44px; background:var(--accent); color:var(--accent-text); font-weight:700; padding:0 1.1rem; text-decoration:none; }
+  .riadky li { grid-template-columns:2rem minmax(0,1fr); }
+  .riadky li p { grid-column:2; }
+  .hero { min-height:0; }
+}
+.riadky { display:grid; grid-template-columns:1fr 1fr; column-gap:3rem; border-top:0; }
+.riadky li { grid-template-columns:2rem minmax(0,1fr); border-top:2px solid var(--graf); border-bottom:0; row-gap:.4rem; }
+.riadky li p { grid-column:2; }
+@media (max-width:52rem){ .riadky{grid-template-columns:1fr} }

@@ -1,0 +1,51 @@
+{
+  "slug": "sk-donareal",
+  "nazev": "Donareal",
+  "url": "https://webhunter-navrhy.github.io/sk-donareal/",
+  "base": "/sk-donareal/",
+  "lang": "sk",
+  "popis": "Donareal, Nitra: bezpečnostný technik BOZP, technik požiarnej ochrany, civilná ochrana, školenia a revízie hasiacich prístrojov pre firmy.",
+  "navrh": true,
+  "domena": "",
+  "og_image": "og.jpg",
+  "logo": "",
+  "theme_color": "#343434",
+  "typ": "ProfessionalService",
+  "ico": "",
+  "kontakt": {
+    "email": "donareal@donareal.com",
+    "telefon": "+421 905 600 063",
+    "adresa": {
+      "ulice": "Mostná 15",
+      "psc": "949 01",
+      "mesto": "Nitra",
+      "zeme": "SK"
+    }
+  },
+  "oteviraci_doba": [],
+  "sameas": [],
+  "cenove_rozpeti": "",
+  "formular": {
+    "endpoint": "",
+    "demo": true,
+    "predmet": "Dopyt z webu Donareal"
+  },
+  "nav": [
+    {
+      "text": "Služby",
+      "href": "#sluzby"
+    },
+    {
+      "text": "Školenia",
+      "href": "#skolenia"
+    },
+    {
+      "text": "Rozsah",
+      "href": "#rozsah"
+    },
+    {
+      "text": "Kontakt",
+      "href": "#kontakt"
+    }
+  ]
+}

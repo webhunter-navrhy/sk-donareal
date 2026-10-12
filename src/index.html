@@ -1,0 +1,100 @@
+{% extends "_base.html" %}
+{% set titulek = 'Donareal Nitra – BOZP, požiarna ochrana a školenia pre firmy' %}
+{% set cesta = '' %}
+{% block obsah %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="stitok">Ing. Ľuboš Helbich · Nitra</p>
+      <h1>BOZP a požiarna ochrana, ktorú máte vybavenú</h1>
+      <p class="uvod">Bezpečnostnotechnická služba, technik požiarnej ochrany, civilná ochrana, školenia a revízie. Pre firmy dodávateľsky, na základe zmluvy.</p>
+      <p class="akcie"><a class="tlacidlo" href="#kontakt">Poslať dopyt</a><a class="odkaz" href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a></p>
+    </div>
+    <aside class="protokol" aria-label="Čo zabezpečíme">
+      <p class="protokol-hlava">Protokol · Čo pre firmu zabezpečíme</p>
+      <ul role="list">
+        <li>Bezpečnostný technik a dokumentácia BOZP</li>
+        <li>Technik požiarnej ochrany a protipožiarne prehliadky</li>
+        <li>Školenia zamestnancov a vedúcich pracovníkov</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="sekce" id="sluzby">
+  <div class="wrap">
+    <h2>Služby</h2>
+    <p class="lead">Zameranie činnosti firmy: komplexné služby dodávateľským spôsobom v oblasti BOZP, ochrany pred požiarmi, civilnej ochrany a vzdelávania v týchto oblastiach.</p>
+    <ul class="riadky" role="list">
+      {% for s in data.sluzby %}<li><span class="znak" aria-hidden="true"></span><h3>{{ s.nazev }}</h3><p>{{ s.popis }}</p></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="sekce tmava" id="skolenia">
+  <div class="wrap dva">
+    <div>
+      <h2>Školenia</h2>
+      <p class="lead">Rozsah a cenu školení dohodneme vždy podľa toho, čo vaši ľudia potrebujú.</p>
+    </div>
+    <ul class="stlpce" role="list">
+      <li>Vstupné oboznámenie z BOZP a školenie z OPP</li>
+      <li>Periodické oboznámenie z BOZP a školenie z OPP</li>
+      <li>Vedúci zamestnanci z BOZP a OPP</li>
+      <li>Zástupcovia zamestnancov</li>
+      <li>Vodiči referentských vozidiel</li>
+      <li>Viazači bremien</li>
+      <li>Obsluha zdvíhacích zariadení</li>
+      <li>Vodiči motorových vozíkov</li>
+      <li>Práce vo výškach</li>
+      <li>Lešenári</li>
+      <li>Mimoriadne a profesné školenia BOZP</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sekce" id="rozsah">
+  <div class="wrap">
+    <h2>Čo je v paušáli a čo osobitne</h2>
+    <p class="lead">Pri zmluvnej spolupráci je väčšina služieb zahrnutá v mesačnom paušáli. Presný rozsah a cena sa určujú podľa veľkosti a rizikovosti prevádzky.</p>
+    <div class="porovnanie">
+      <div>
+        <h3>V paušáli</h3>
+        <ul role="list">
+          <li>preventívne kontroly pracovísk a návrhy opatrení</li>
+          <li>vstupné a periodické školenia zamestnancov</li>
+          <li>vypracovanie a aktualizácia dokumentácie BOZP a OPP</li>
+          <li>účasť pri kontrolách orgánov dozoru</li>
+          <li>protipožiarne prehliadky, cvičné poplachy, príprava hliadok</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Osobitne</h3>
+        <ul role="list">
+          <li>opravy a skúšky hasiacich prístrojov, dodávky materiálu a značenia</li>
+          <li>odborné prehliadky vyhradených technických zariadení</li>
+          <li>špecializované školenia (vozíky, lešenári, práce vo výškach…)</li>
+          <li>koordinátor bezpečnosti na stavenisku</li>
+          <li>ďalšia dokumentácia na osobitné požiadavky, doprava</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sekce kontakt" id="kontakt">
+  <div class="wrap dva">
+    <div>
+      <h2>Kontakt</h2>
+      <address>
+        <strong>Ing. Ľuboš Helbich – DONAREAL</strong><br>
+        Mostná 15<br>949 01 Nitra<br><br>
+        <a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a><br>
+        <a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a>
+      </address>
+      <p class="poznamka">Napíšte, koľko máte zamestnancov a čo potrebujete. Ozvem sa s návrhom spolupráce.</p>
+    </div>
+    <div>{% include "_formular.html" %}</div>
+  </div>
+</section>
+{% endblock %}

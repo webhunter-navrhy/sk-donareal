@@ -1,0 +1,15 @@
+{
+  "znamka": 6,
+  "slabiny": [
+    "Na webu není jediná fotka ani vizuální motiv. Všechny sekce jsou jen seznamy a tabulky, tedy přesně ty „obdélníčky“, které Rafael už odmítl. Oprava: v hero vpravo nahradit kartu „PROTOKOL“ skutečnou fotkou z podkladů nebo webu firmy (Ing. Helbich při kontrole, hasicí přístroje, školení). Pokud žádné fotky nejsou, nakreslit v perokresbě výřez revizního štítku nebo kontrolní knihy hasicího přístroje. Do sekcí Školenia a Kontakt přidat aspoň jednu reálnou fotku nebo ilustraci.",
+    "Obsah se opakuje a sekce Služby je zbytečně dlouhá. Karta PROTOKOL v hero vypisuje stejných 6 služeb jako sekce Služby hned pod ní, a Služby jsou pak dlouhý řádkový seznam se štítky „ZÁZNAM 1/6 … 6/6“. To je jen převlečené číslování 01–06, tedy zakázaný vzor. Na mobilu (390 px) navíc sloupec se zaškrtávátkem odsazuje text o zhruba 60 px, takže popisy tečou úzkým sloupcem přes 4 obrazovky. Oprava: štítky ZÁZNAM x/6 smazat, z hero vyhodit buď duplicitní seznam, nebo ho zkrátit na 3 hlavní body. Služby na PC dát do mřížky 2×3, na mobilu zrušit odsazení zaškrtávátka (ikona na stejném řádku jako nadpis, popis na plnou šířku).",
+    "Značka se nedá poznat a sekce Školenia je slabá. V hlavičce je jen text „Donareal.“ s oranžovou tečkou. Pokud má firma na donareal.com logo, musí být vlevo v hlavičce. Tmavý pruh Školenia (bez fotky, s 13 položkami ve dvou úzkých sloupcích) na PC působí jako patička uprostřed stránky a na mobilu je to 12 řádků s odrážkami. Oprava: ověřit logo a barvy na původním webu a použít je. Školenia udělat světlé, s fotkou ze školení, položky seskupit do 3 skupin (BOZP a OPP, technika a stroje, práce ve výškách) a u každé skupiny dát CTA „Objednať školenie“."
+  ],
+  "silne": [
+    "Koncept „kontrolní protokol“ s mono písmem a zaškrtávátky sedí k oboru BOZP a ve stránce drží jednotně.",
+    "Obsah je věcný, z reálných služeb firmy, bez vymyšlených čísel a recenzí. Sekce „Čo je v paušáli a čo osobitne“ je pro zákazníka užitečná.",
+    "Konverze je jasná: telefon v hero i v hlavičce na mobilu (Zavolať), formulář s výběrem služby a polem pro počet zaměstnanců. QA je čisté, nic nepřetéká a dotykové cíle mají dost místa.",
+    "Čitelná typografie a řemeslně čisté provedení: Schibsted Grotesk s IBM Plex Mono, slovenská diakritika je v pořádku, rytmus světlých sekcí je klidný."
+  ],
+  "verdikt": "opravit – Koncept protokolu i obsah jsou poctivé, ale web je čistě textový (samé seznamy, žádné fotky ani logo) a v sekci Služby používá maskované číslování. Takhle by ho Rafael nejspíš smetl jako „obdélníčky“. Po doplnění fotek nebo ilustrací, loga a zhuštění Služeb a Školení má na 8."
+}
